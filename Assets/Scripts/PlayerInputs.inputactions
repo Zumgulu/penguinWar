@@ -1,5 +1,5 @@
 {
-    "name": "PlayerControls",
+    "name": "PlayerInputs",
     "maps": [
         {
             "name": "Gameplay",
@@ -9,14 +9,22 @@
                     "name": "Move",
                     "type": "Button",
                     "id": "2a92bc73-a053-4b18-8c45-e562bd557060",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ShootPressed",
+                    "type": "Button",
+                    "id": "bbd1f676-c7b9-4cd9-a1be-985935118db3",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Shoot",
+                    "name": "ShootReleased",
                     "type": "Button",
-                    "id": "bbd1f676-c7b9-4cd9-a1be-985935118db3",
+                    "id": "4cedee6b-9eeb-4e45-b6e2-ba3ca2233841",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -46,10 +54,10 @@
                     "name": "",
                     "id": "d4e4ca44-7b30-47d6-8e6b-4a7a48fef593",
                     "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "ShootPressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -61,6 +69,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6fdd6157-2cf9-48c4-b6d9-e08a0d08f402",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootReleased",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

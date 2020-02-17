@@ -15,23 +15,19 @@ public class PlayerController : MonoBehaviour
     public bool grounded = false;
     public Quaternion defaultRotation;
     public float damp = 0.2f;
+    public GameObject waterGun;
     public GameObject Circle;
     public CameraMultiTarget multiCam;
+    private item waterGunItem;
     //public item waterGun;
 
     // Gamepad controls
-    PlayerControls controls;
-    Vector2 move;
+    //PlayerControls controls;
+    Vector2 inputMovement;
 
     private void Awake()
     {
-        controls = new PlayerControls();
-
-        controls.Gameplay.Jump.performed += context => Jump();
-
-        controls.Gameplay.Move.performed += context => move = context.ReadValue<Vector2>();
-        controls.Gameplay.Move.canceled += context => move = Vector2.zero;
-        //controls.Gameplay.Shoot.performed +=
+        waterGunItem = waterGun.GetComponent<item>();
     }
 
     // Start is called before the first frame update
@@ -44,13 +40,13 @@ public class PlayerController : MonoBehaviour
         lvl = GameObject.Find("Level").GetComponent<LevelManager>();
 
         // De-/Activate gamepad controls
-        if (hasGamepad)
+        /*if (hasGamepad)
         {
             controls.Gameplay.Enable();
         } else
         {
             controls.Gameplay.Disable();
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -60,11 +56,11 @@ public class PlayerController : MonoBehaviour
         //checked if player flipped over
         if (Vector3.Dot(transform.up, Vector3.down) > 0.5)
         {
-            Debug.Log("flipped over xD");
+            //Debug.Log("flipped over xD");
         }
         if (Vector3.Dot(transform.right, Vector3.right) > 0.7)
         {
-            Debug.Log("flipped over xD");
+            //Debug.Log("flipped over xD");
             //     rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
             //    rBody.isKinematic = true;
             //     transform.rotation = defaultRotation;
@@ -113,12 +109,13 @@ public class PlayerController : MonoBehaviour
         {
             //here write the steering for gamepads ;D
 
-            Debug.Log("Movement:" + move);
-
-            // Movement
-            Vector3 movement = new Vector3(move.x, 0f, move.y) * Time.deltaTime;
-            transform.rotation = Quaternion.LookRotation(movement);
-            transform.Translate(movement, Space.World);
+            if (inputMovement != Vector2.zero)
+            {
+                // Movement
+                Vector3 movement = new Vector3(inputMovement.x, 0f, inputMovement.y) * Time.deltaTime * moveSpeed;
+                transform.rotation = Quaternion.LookRotation(movement);
+                transform.Translate(movement, Space.World);
+            }
         }
 
     }
@@ -151,5 +148,27 @@ public class PlayerController : MonoBehaviour
             // this is grounded!
             grounded = true;
         }
-    }    
+    }
+
+    private void OnMove(InputValue input)
+    {
+        inputMovement = input.Get<Vector2>();
+    }
+
+    private void OnJump()
+    {
+        Jump();
+    }
+
+    private void OnShootPressed()
+    {
+        Debug.Log("Charge shoot");
+        waterGunItem.ChargeShoot();
+    }
+
+    private void OnShootReleased()
+    {
+        Debug.Log("Release shoot");
+        waterGunItem.FireShoot();
+    }
 }

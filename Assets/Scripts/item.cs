@@ -12,7 +12,7 @@ public class item : MonoBehaviour {
     public float projectileVelocity = 5f;
     public float rpm;       //this is the rate of fire of your weapon!
     public float rof;       //this is the rate of fire of your weapon!
-    public bool shooting = false;
+    public bool charging = false;
     public GameObject muzzle;
     public Transform aimTarget;
     public float charge;
@@ -33,7 +33,6 @@ public class item : MonoBehaviour {
     }
 
     IEnumerator  fire() 
-
         //counter for ROF
     {
         print("i shoot");
@@ -50,25 +49,38 @@ public class item : MonoBehaviour {
     {
         projectileVelocity *= Time.deltaTime;
 
-        shooting = false;
         if (Input.GetKey(KeyCode.Mouse0))
+        {
+            ChargeShoot();
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            FireShoot();
+        }
+        else
+        {
+            //Cone.SetActive(false);
+        }
+
+        if (charging)
         {
             Cone.SetActive(true);
 
             charge++;
             // Scale cone by charge
             Cone.transform.localScale = coneStartScale * charge * 0.1f;
-        }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            shooting = true;
-            StartCoroutine(fire());
-            Cone.SetActive(false);
-
-        }
-        else
-        {
-            Cone.SetActive(false);
-        }
+        } 
 	}
+
+    public void ChargeShoot()
+    {
+        charging = true;
+    }
+
+    public void FireShoot()
+    {
+        StartCoroutine(fire());
+        Cone.SetActive(false);
+        charging = false;
+    }
 }

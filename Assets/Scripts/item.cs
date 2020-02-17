@@ -15,7 +15,7 @@ public class item : MonoBehaviour {
     public bool charging = false;
     public GameObject muzzle;
     public Transform aimTarget;
-    public float charge;
+    public float charge = 0;
     public GameObject Cone;
 
     // Cone increasing by charge

@@ -19,13 +19,13 @@ public class bullet : MonoBehaviour {
         this.transform.Translate(0,0,speed*Time.deltaTime);
 	}
 
-    void OnCollisionEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
                 print("i hit something");
         if (other.gameObject.layer == 8) //if you hit an object that has force
         {
-           
-        Rigidbody myRigidBody = other.GetComponent<Rigidbody>();
+
+            Rigidbody myRigidBody = other.rigidbody;
             if (myRigidBody != null)
             {
 
@@ -38,7 +38,7 @@ public class bullet : MonoBehaviour {
         if (other.gameObject.layer == 9) //if you hit an object that has force
         {
 
-            Rigidbody myRigidBody = other.GetComponent<Rigidbody>();
+            Rigidbody myRigidBody = other.rigidbody;
             if (myRigidBody != null)
             {
 

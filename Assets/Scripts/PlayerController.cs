@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (!grounded) // Player is in air
             {
+                // ToDo: Discuss in group: Is it fun? Or should we remove it?
                 // Only move forward
                 transform.Translate(transform.forward * Time.deltaTime * moveSpeed, Space.World);
             }

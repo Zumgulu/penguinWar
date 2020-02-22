@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 214188255}
   - component: {fileID: 214188254}
   - component: {fileID: 214188253}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: ice platform (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,6 +554,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cylinder (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618810007470338525, guid: 3309bea498e20ae43b87f68f4ed53df1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3309bea498e20ae43b87f68f4ed53df1, type: 3}
@@ -812,6 +817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6618810007470338525, guid: 3309bea498e20ae43b87f68f4ed53df1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3309bea498e20ae43b87f68f4ed53df1, type: 3}
 --- !u!4 &345499631 stripped
@@ -891,6 +901,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cylinder (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618810007470338525, guid: 3309bea498e20ae43b87f68f4ed53df1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3309bea498e20ae43b87f68f4ed53df1, type: 3}
@@ -1183,7 +1198,7 @@ GameObject:
   - component: {fileID: 436846799}
   - component: {fileID: 436846798}
   - component: {fileID: 436846797}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: ice platform (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1475,7 +1490,7 @@ GameObject:
   - component: {fileID: 552454777}
   - component: {fileID: 552454776}
   - component: {fileID: 552454779}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: ice platform (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1569,6 +1584,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ice platform (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8422956510913894630, guid: 08fc7eb2aa35ecd46b3bd4503e77acfd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8422956510913894651, guid: 08fc7eb2aa35ecd46b3bd4503e77acfd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1648,7 +1668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &615055914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1870,6 +1890,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cylinder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618810007470338525, guid: 3309bea498e20ae43b87f68f4ed53df1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3309bea498e20ae43b87f68f4ed53df1, type: 3}
@@ -2691,6 +2716,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6618810007470338525, guid: 3309bea498e20ae43b87f68f4ed53df1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3309bea498e20ae43b87f68f4ed53df1, type: 3}
 --- !u!4 &1265484507 stripped
@@ -2739,7 +2769,7 @@ GameObject:
   - component: {fileID: 1510325735}
   - component: {fileID: 1510325734}
   - component: {fileID: 1510325733}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: ice platform (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2985,6 +3015,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6618810007470338525, guid: 3309bea498e20ae43b87f68f4ed53df1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3309bea498e20ae43b87f68f4ed53df1, type: 3}
 --- !u!4 &1569858332 stripped
@@ -3106,7 +3141,7 @@ GameObject:
   - component: {fileID: 1754691037}
   - component: {fileID: 1754691036}
   - component: {fileID: 1754691039}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: ice platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3230,7 +3265,7 @@ GameObject:
   - component: {fileID: 1773088968}
   - component: {fileID: 1773088967}
   - component: {fileID: 1773088970}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: ice platform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3471,6 +3506,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 2318553835183963308, guid: 716fe81b5859f3d4983fd7310bfd0148,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5984375140576192596, guid: 716fe81b5859f3d4983fd7310bfd0148,
         type: 3}
       propertyPath: hasGamepad
@@ -3490,7 +3530,7 @@ GameObject:
   - component: {fileID: 1896903447}
   - component: {fileID: 1896903446}
   - component: {fileID: 1896903449}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: ice platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3737,6 +3777,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cylinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618810007470338525, guid: 3309bea498e20ae43b87f68f4ed53df1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3309bea498e20ae43b87f68f4ed53df1, type: 3}

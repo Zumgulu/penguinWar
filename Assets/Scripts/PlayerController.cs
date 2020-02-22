@@ -12,13 +12,14 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed = 40f;
     public LevelManager lvl;
 
-    public bool grounded = false;
+    public bool grounded = true;
     public Quaternion defaultRotation;
     public float damp = 0.2f;
     public GameObject waterGun;
     public GameObject Circle;
     public CameraMultiTarget multiCam;
     private item waterGunItem;
+    private bool isCharging = false;
     //public item waterGun;
 
     // Gamepad controls
@@ -109,12 +110,22 @@ public class PlayerController : MonoBehaviour
         {
             //here write the steering for gamepads ;D
 
-            if (inputMovement != Vector2.zero)
+            if (inputMovement != Vector2.zero && grounded)
             {
                 // Movement
                 Vector3 movement = new Vector3(inputMovement.x, 0f, inputMovement.y) * Time.deltaTime * moveSpeed;
                 transform.rotation = Quaternion.LookRotation(movement);
-                transform.Translate(movement, Space.World);
+
+                // Don't move while charging
+                if (!isCharging)
+                {
+                    transform.Translate(movement, Space.World);
+                }
+            }
+            else if (!grounded) // Player is in air
+            {
+                // Only move forward
+                transform.Translate(transform.forward * Time.deltaTime * moveSpeed, Space.World);
             }
         }
 
@@ -123,8 +134,10 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         //i jump up!
-        rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
-        grounded = false;
+        if (grounded) { 
+            rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
+            grounded = false;
+        }
     }
 
 
@@ -142,8 +155,12 @@ public class PlayerController : MonoBehaviour
 
             //after time, the player is respawned somewhere..
         }
+    }
 
-        if (other.gameObject.layer == 11) //if you hit terrain
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Landed on ground or object
+        if (collision.gameObject.layer == 10 || collision.gameObject.layer == 9) //if you hit terrain or object
         {
             // this is grounded!
             grounded = true;
@@ -162,13 +179,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnShootPressed()
     {
-        Debug.Log("Charge shoot");
         waterGunItem.ChargeShoot();
+        isCharging = true;
     }
 
     private void OnShootReleased()
     {
-        Debug.Log("Release shoot");
         waterGunItem.FireShoot();
+        isCharging = false;
     }
 }
